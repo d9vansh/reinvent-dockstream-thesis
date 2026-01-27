@@ -1,0 +1,77 @@
+{
+  "docking": {
+    "header": {
+      "environment": {},
+      "logging": {
+        "logfile": "/home/rajnish/REINVENT4/AutodockVina.log"
+      }
+    },
+    "ligand_preparation": {
+      "embedding_pools": [
+        {
+          "pool_id": "RDkit",
+          "type": "RDkit",
+          "parameters": {
+            "protonate": true,
+            "coordinate_generation": {
+              "method": "UFF",
+              "maximum_iterations": 600
+            }
+          },
+          "input": {
+            "standardize_smiles": false,
+            "input_path": "/home/rajnish/REINVENT4/Devansh/input_smile_autodock.smi",
+            "type": "smi",
+            "use_taut_enum": {
+              "prefix_execution": "module load taut_enum",
+              "enumerate_protonation": true
+            }
+          }
+        }
+      ]
+    },
+    "docking_runs": [
+      {
+        "backend": "AutoDockVina",
+        "run_id": "AutoDockVina",
+        "input_pools": ["RDkit"],
+        "parameters": {
+          "binary_location": "/home/rajnish/REINVENT4/autodock_vina_1_1_2_linux_x86/bin",
+          "parallelization": {
+            "number_cores": 4
+          },
+          "seed": 42,
+          "receptor_pdbqt_path": ["/home/rajnish/REINVENT4/Devansh/receptor.pdbqt"],
+          "number_poses": 2,
+          "search_space": {
+            "--center_x": 3.3,
+            "--center_y": 11.5,
+            "--center_z": 24.8,
+            "--size_x": 15,
+            "--size_y": 10,
+            "--size_z": 10
+          }
+          {
+          "seed": 42,
+          "receptor_pdbqt_path": [
+            "/home/rajnish/REINVENT4/Devansh/receptor.pdbqt"
+          ],
+          "number_poses": 2,
+          "exhaustiveness": 10,
+          "search_space": {
+            "--center_x": 6.083,
+            "--center_y": 44.694,
+            "--center_z": 40.028,
+            "--size_x": 30,
+            "--size_y": 30,
+            "--size_z": 30
+          }
+        },
+        "output": {
+          "poses": { "poses_path": "/home/rajnish/REINVENT4/AutodockVina/enumerated.sdf" },
+          "scores": { "scores_path": "/home/rajnish/REINVENT4/AutodockVina/enumerated.csv" }
+        }
+      }
+   ]
+  }
+}
