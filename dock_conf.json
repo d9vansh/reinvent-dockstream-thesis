@@ -43,20 +43,6 @@
           "seed": 42,
           "receptor_pdbqt_path": ["/home/rajnish/REINVENT4/Devansh/receptor.pdbqt"],
           "number_poses": 2,
-          "search_space": {
-            "--center_x": 3.3,
-            "--center_y": 11.5,
-            "--center_z": 24.8,
-            "--size_x": 15,
-            "--size_y": 10,
-            "--size_z": 10
-          }
-          {
-          "seed": 42,
-          "receptor_pdbqt_path": [
-            "/home/rajnish/REINVENT4/Devansh/receptor.pdbqt"
-          ],
-          "number_poses": 2,
           "exhaustiveness": 10,
           "search_space": {
             "--center_x": 6.083,
