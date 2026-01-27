@@ -117,7 +117,7 @@ transform.k = 0.5
 [[scoring.component.DockStream.endpoint]]
 name = "Docking with Dockstream"
 weight = 1
-params.configuration_path = "PATH_TO_DOCKSTEAM_CONF.json"
+params.configuration_path = "/home/rajnish/REINVENT4/Devansh/dock_conf.json"
 params.docker_script_path = "/home/rajnish/REINVENT4/DockStream/docker.py"
 params.docker_python_path =   "/home/rajnish/miniconda3/envs/DockStream/bin/python"
 transform.type = "reverse_sigmoid"
