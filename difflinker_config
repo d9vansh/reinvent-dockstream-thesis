@@ -1,0 +1,10 @@
+python ../../generate_with_protein.py \
+    --fragments Fragments.sdf \
+    --protein Protein.pdb \
+    --output samples \
+    --model models/pockets_difflinker_full_given_anchors.ckpt \
+    --linker_size models/zinc_size_gnn.ckpt \
+    --anchors 21,52 \
+    --n_samples 256 \
+    --max_batch_size 4 \
+    --random_seed 1
