@@ -25,3 +25,15 @@ python ../generate_with_protein.py \
 ##
 python -W ignore generate_with_protein.py --fragments Fragments.sdf --protein prepared.pdb --model models/'pockets_difflinker_full_fc_pdb_excluded.ckpt?download=1' --linker_size 10 --anchors 42,11 
 
+
+###Pocketed
+python ../generate_with_protein.py     
+    --fragments Fragments.sdf     
+    --protein prepared.pdb     
+    --output samples     
+    --model models/pockets_difflinker_full_given_anchors.ckpt     
+    --linker_size 10     
+    --anchors 42,11     
+    --n_samples 256     
+    --max_batch_size 1     
+    --random_seed 1
