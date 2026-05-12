@@ -37,3 +37,44 @@ python ../generate_with_protein.py
     --n_samples 256     
     --max_batch_size 1     
     --random_seed 1
+
+
+
+
+#1 Fragments-only mode
+python -W ignore ../generate.py     
+    --fragments Fragments.sdf     
+    --output run_zinc_noanc_nopock_linksiz     
+    --model models/zinc_difflinker.ckpt     
+    --linker_size 6,12     
+    --n_samples 1024
+
+#2 Pocket (no anchor) mode
+python -W ignore ../generate_with_pocket.py     
+    --fragments Fragments.sdf     
+    --pocket prepared_noH.pdb     
+    --output run_noanc_pock2     
+    --model models/pockets_difflinker_full_no_anchors_fc_pdb_excluded.ckpt     
+    --linker_size 6,12     
+    --n_samples 512     
+    --max_batch_size 2     
+    --random_seed 42
+
+#3 Pocket (with anchor) mode
+python -W ignore ../generate_with_protein.py     
+    --fragments Fragments.sdf     
+    --protein prepared_noH.pdb     
+    --output mode1/     
+    --model models/pockets_difflinker_full_given_anchors.ckpt     
+    --linker_size 6,12     
+    --anchors 42,11     
+    --n_samples 1024     
+    --max_batch_size 2     
+    --random_seed 42
+
+
+
+
+
+
+
